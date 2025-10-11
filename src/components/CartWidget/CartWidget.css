@@ -1,0 +1,16 @@
+.cart-widget {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 1.8rem;
+}
+
+.cart-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 40%);
+}
