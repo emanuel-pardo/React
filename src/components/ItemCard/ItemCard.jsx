@@ -1,16 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './ItemCard.css';
 
-function ItemCard() {
+function ItemCard({product}) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card className="card-container">
+      <Card.Img variant="top" src={product.img} alt={product.code}/>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text style={{overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"}}>{product.description}</Card.Text>       
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>

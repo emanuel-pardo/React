@@ -1,0 +1,8 @@
+.card-container{
+    width: 18rem;
+}
+.card-container .card-img-top {
+  width: 100%;        /* ocupa todo el ancho de la card */
+  height: 25rem;      /* altura fija que vos elijas */
+  object-fit: cover;  /* recorta la imagen sin deformarla */
+}
