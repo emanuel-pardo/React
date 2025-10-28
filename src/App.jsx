@@ -1,7 +1,9 @@
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import PageContainer from "./components/PageContainter/PageContainer";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -14,7 +16,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer title={title} subtitle={subtitle} text={text} />
+      <PageContainer title={title} subtitle={subtitle} text={text} />
+      <ItemListContainer/>
     </>
   )
 }

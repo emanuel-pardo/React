@@ -1,0 +1,34 @@
+.ilc-container {
+    max-width: 25rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: gainsboro;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ilc-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: darkslategray;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.ilc-subtitle {
+    font-size: 1.25rem;
+    color: grey;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.ilc-text {
+    font-size: 1rem;
+    color: black;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+

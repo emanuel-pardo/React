@@ -17,9 +17,7 @@ function NavBar() {
                     <NavDropdown title="Productos" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#todos">Todos</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#overlock">Overlock</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#poliamida">Poliamida</NavDropdown.Item>
+                        <NavDropdown.Item href="#poliamida">Nylon</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#at">Alta Tenacidad</NavDropdown.Item>
                         <NavDropdown.Divider />
