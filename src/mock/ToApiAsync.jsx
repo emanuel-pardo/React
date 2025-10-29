@@ -113,9 +113,19 @@ const products = [
 
 ]
 
+export const getProductsById = (id) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Valor recibido en getProductsById:", id, "tipo:", typeof id);
+            const idNumber = Number(id)
+            const product = products?.find(prod => prod.id === idNumber)
+            product? resolve(product) : reject("Intente nuevamente más tarde");
+        }, 1500);
+    });
+};
+
 export const getProducts = () => {
     let success = true;
-
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             success ? resolve(products) : reject("Intente nuevamente más tarde");

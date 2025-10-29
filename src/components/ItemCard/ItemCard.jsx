@@ -9,7 +9,7 @@ function ItemCard({product}) {
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text style={{overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"}}>{product.description}</Card.Text>       
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Detalle</Button>
       </Card.Body>
     </Card>
   );
