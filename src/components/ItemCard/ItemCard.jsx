@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {Link} from "react-router-dom";
 import './ItemCard.css';
 
 function ItemCard({product}) {
@@ -9,7 +10,7 @@ function ItemCard({product}) {
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text style={{overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"}}>{product.description}</Card.Text>       
-        <Button variant="primary">Detalle</Button>
+        <Link className="btn btn-dark" to={`/products/${product?.id}`}>Detalle</Link>
       </Card.Body>
     </Card>
   );

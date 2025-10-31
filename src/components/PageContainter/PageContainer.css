@@ -5,6 +5,10 @@
     background-color: gainsboro;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .ilc-title {
@@ -32,3 +36,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+.ilc-img {
+    width: 18rem;
+    border-radius: 10px;
+}
