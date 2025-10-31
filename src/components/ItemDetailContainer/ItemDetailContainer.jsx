@@ -1,4 +1,3 @@
-import "./ItemDetailContainer.css";
 import { getProductsById } from "../../mock/ToApiAsync";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

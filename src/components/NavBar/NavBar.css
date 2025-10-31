@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2.2rem;
     flex-grow: 1;
+    font-weight: bold;
+    padding-right: 5%;
 
 }
 

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
+    if (!product) return;
+
     return (
         <>
             <div className='detail-container'>

@@ -1,13 +1,13 @@
-import PageContainer from "../PageContainter/PageContainer";
+import PageContainer from "../PageContainer/PageContainer";
 
 const Error = () => {
 
-    const title = "Error";
-    const subtitle = "Intente nuevamente más tarde...";
+    const title = "error";
+    const subtitle = "intente nuevamente más tarde...";
 
     return (
         <>
-            <PageContainer title={title} subtitle={subtitle} showImage={true}  />
+            <PageContainer title={title} subtitle={subtitle} />
         </>
 
     )
