@@ -1,5 +1,5 @@
 .detail-container {
-    max-width: 75rem;
+    max-width: 50rem;
     margin: 2rem auto;
     padding: 1.5rem;
     background-color: gainsboro;
@@ -9,12 +9,6 @@
     flex-direction: column; 
     align-items: center;    
     gap: 1rem;              
-}
-
-.detail-loading{
-    max-width: 10rem;
-    margin: 2rem auto;
-    padding: 1.5rem;
 }
 
 .detail-title {

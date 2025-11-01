@@ -1,13 +1,13 @@
 import PageContainer from "../PageContainer/PageContainer";
 
-const Error = () => {
+const Error = ({errorMessage = "intente nuevamente más tarde..."}) => {
 
     const title = "error";
-    const subtitle = "intente nuevamente más tarde...";
+   
 
     return (
         <>
-            <PageContainer title={title} subtitle={subtitle} />
+            <PageContainer title={title} subtitle={errorMessage} />
         </>
 
     )

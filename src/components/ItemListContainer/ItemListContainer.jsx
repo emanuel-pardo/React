@@ -12,12 +12,12 @@ const ItemListContainer = () => {
         if (categoryId) {
             getProductsByCategoryId(categoryId)
                 .then((res) => setData(res))
-                .catch((error) => console.error("Error al obtener productos:", error))
+                .catch((error) => setError(`Error al obtener producto: ${JSON.stringify(error)}`))
         }
         else {
             getProducts()
                 .then((res) => setData(res))
-                .catch((error) => console.error("Error al obtener productos:", error))
+                .catch((error) => setError(`Error al obtener productos: ${JSON.stringify(error)}`))
         }
     }, [categoryId]);
 
