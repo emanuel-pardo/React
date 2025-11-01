@@ -24,7 +24,7 @@ function NavBar() {
                         <NavDropdown.Divider />
                         <NavDropdown.Item as={Link} to="/products/category/3">Fibra Cortada</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#contacto">CONTACTO</Nav.Link>
+                    <Nav.Link as={NavLink} to="/contact">CONTACTO</Nav.Link>
                 </Nav>
                 <div className="cart-area">
                     <CartWidget itemsCount={7} />
