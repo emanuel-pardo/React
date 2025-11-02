@@ -1,12 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import PageContainer from "./components/PageContainer/PageContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import ContactForm from "./components/ContactForm/ContactForm";
 import Error from "./components/Error/Error";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ContactForm from "./components/ContactForm/ContactForm";
+
 
 
 function App() {
@@ -30,13 +31,9 @@ la mejora continua, tanto en nuestros productos como en los procesos de fabricac
         <Route path="/products" element={<ItemListContainer />} />
         <Route path="/products/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/products/:id" element={<ItemDetailContainer />} />
-         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/contact" element={<ContactForm />} />
         <Route path="*" element={<Error />} />
       </Routes>
-
-
-
-
     </BrowserRouter>
   )
 }

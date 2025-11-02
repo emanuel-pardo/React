@@ -12,21 +12,19 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
+        setError("");    
         getProductsById(id)
             .then((res) => setData(res))
-            .catch((error) => setError(`Error al obtener producto: ${JSON.stringify(error)}`))
+            .catch((error) =>  setError(error.message))
     }, [id]);
 
     if (error)
         return (
-            <>
-                <Error  errorMessage={error} />
-            </>
+            <Error errorMessage={error} />
         )
+
     return (
-        <>
-            <ItemDetail product={data} />
-        </>
+        <ItemDetail product={data} />
     )
 }
 

@@ -14,17 +14,17 @@ function NavBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="nav-center">
-                    <Nav.Link as={NavLink} to="/">NOSOTROS</Nav.Link>
-                    <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown">
-                        <NavDropdown.Item as={Link} to="/products" >Todos</NavDropdown.Item>
+                    <Nav.Link as={NavLink} to="/">Nosotros</Nav.Link>
+                    <NavDropdown title="Productos" id="basic-nav-dropdown">
+                        <NavDropdown.Item as={NavLink} to="/products" >Todos</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={Link} to="/products/category/1">Nylon</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/1">Nylon</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={Link} to="/products/category/2">Alta Tenacidad</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/2">Alta Tenacidad</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={Link} to="/products/category/3">Fibra Cortada</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/3">Fibra Cortada</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link as={NavLink} to="/contact">CONTACTO</Nav.Link>
+                    <Nav.Link as={NavLink} to="/contact">Contacto</Nav.Link>
                 </Nav>
                 <div className="cart-area">
                     <CartWidget itemsCount={7} />

@@ -11,15 +11,15 @@ const products = [
         stock: 4
     },
     {
-        id: 2,
-        name: '30-2 3000 Mts. Blanco',
-        description: 'Hilo de Nylon o Poliamida de Alta Tenacidad y Alta Resistencia para realizar costuras como Calzados (Zapatillas, Zapatos), Cueros (Marroquinería, Bolsos), Aparado de Calzado, Instrumentos de Camping (Carpas, Bolsas para dormir), Lonería (Botes, Camiones, Carpintería), Colchonería (Matelasse), Inflables, Cinturones de Seguridad.',
-        category: 'Nylon',
-        categoryId: 1,
-        price: 1000.00,
-        code: '10302NN191',
-        img: 'https://static.wixstatic.com/media/baed1c_005758b3b0514860b07e3633917fdd08~mv2.png/v1/fill/w_544,h_818,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hilo%20de%20coser%20conotex%20fabrica%2030-2%203000%20mts%20nylon%20blanco.png',
-        stock: 7
+        id: 4,
+        name: '40-3 4000 Mts. Blanco',
+        description: 'Hilo de Poliester de Alta Tenacidad y Alta Resistencia para realizar costuras como Calzados (Zapatillas, Zapatos), Cueros (Marroquinería, Bolsos), Aparado de Calzado, Instrumentos de Camping (Carpas, Bolsas para dormir), Lonería (Botes, Camiones, Carpintería), Colchonería (Matelasse).',
+        category: 'Poliester',
+        categoryId: 2,
+        price: 900.00,
+        code: '10403PN200',
+        img: 'https://static.wixstatic.com/media/baed1c_f88384ca72bc43d2bbe7a36a301c9eb6~mv2.png/v1/fill/w_544,h_818,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hilo%20de%20coser%20conotex%20fabrica%20poliester%20alta%20tenacidad%2040-3%20blanco.png',
+        stock: 2
     },
     {
         id: 10,
@@ -31,6 +31,17 @@ const products = [
         code: '10103NN200',
         img: 'https://static.wixstatic.com/media/baed1c_f81a03421eb6420495c43f814ff59c28~mv2.png/v1/fill/w_526,h_818,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hilo%20de%20coser%20conotex%20fabrica%2010-3%201000%20mts%20nylon%20blanco.png',
         stock: 5
+    },
+    {
+        id: 2,
+        name: '30-2 3000 Mts. Blanco',
+        description: 'Hilo de Nylon o Poliamida de Alta Tenacidad y Alta Resistencia para realizar costuras como Calzados (Zapatillas, Zapatos), Cueros (Marroquinería, Bolsos), Aparado de Calzado, Instrumentos de Camping (Carpas, Bolsas para dormir), Lonería (Botes, Camiones, Carpintería), Colchonería (Matelasse), Inflables, Cinturones de Seguridad.',
+        category: 'Nylon',
+        categoryId: 1,
+        price: 1000.00,
+        code: '10302NN191',
+        img: 'https://static.wixstatic.com/media/baed1c_005758b3b0514860b07e3633917fdd08~mv2.png/v1/fill/w_544,h_818,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hilo%20de%20coser%20conotex%20fabrica%2030-2%203000%20mts%20nylon%20blanco.png',
+        stock: 7
     },
     {
         id: 11,
@@ -53,17 +64,6 @@ const products = [
         code: '10602PN622',
         img: 'https://static.wixstatic.com/media/baed1c_24de63ad71694c74a447e2a20e281fba~mv2.png/v1/fill/w_680,h_984,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/baed1c_24de63ad71694c74a447e2a20e281fba~mv2.png',
         stock: 3
-    },
-    {
-        id: 4,
-        name: '40-3 4000 Mts. Blanco',
-        description: 'Hilo de Poliester de Alta Tenacidad y Alta Resistencia para realizar costuras como Calzados (Zapatillas, Zapatos), Cueros (Marroquinería, Bolsos), Aparado de Calzado, Instrumentos de Camping (Carpas, Bolsas para dormir), Lonería (Botes, Camiones, Carpintería), Colchonería (Matelasse).',
-        category: 'Poliester',
-        categoryId: 2,
-        price: 900.00,
-        code: '10403PN200',
-        img: 'https://static.wixstatic.com/media/baed1c_f88384ca72bc43d2bbe7a36a301c9eb6~mv2.png/v1/fill/w_544,h_818,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hilo%20de%20coser%20conotex%20fabrica%20poliester%20alta%20tenacidad%2040-3%20blanco.png',
-        stock: 2
     },
     {
         id: 5,
@@ -125,12 +125,12 @@ const products = [
 ]
 
 export const getProductsById = (id) => {
+    let success = true;
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log("Valor recibido en getProductsById:", id, "tipo:", typeof id);
             const idNumber = Number(id)
             const product = products?.find(prod => prod.id === idNumber)
-            product? resolve(product) : reject("Intente nuevamente más tarde");
+            success && product ? resolve(product) : reject(new Error("Producto no encontrado"));
         }, 1500);
     });
 };
@@ -139,7 +139,7 @@ export const getProducts = () => {
     let success = true;
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            success ? resolve(products ?? []) : reject("Intente nuevamente más tarde");
+            success && products?.length ? resolve(products) : reject(new Error("Productos no encontrados"));
         }, 1500);
     });
 };
@@ -148,7 +148,8 @@ export const getProductsByCategoryId = (categoryId) => {
     let success = true;
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            success ? resolve(products?.filter(product => product.categoryId === Number(categoryId)) ?? []) : reject("Intente nuevamente más tarde");
+            const productsByCategory = products?.filter(product => product.categoryId === Number(categoryId));
+            success && productsByCategory?.length ? resolve(productsByCategory) : reject(new Error("Productos no encontrados en Categoria seleccionada"));
         }, 1500);
     });
 };
