@@ -1,5 +1,5 @@
 .detail-container {
-     display: flex;
+    display: flex;
     flex-direction: row;
     align-items: flex-start; 
     max-width: 70rem;

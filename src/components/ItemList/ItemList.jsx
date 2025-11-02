@@ -5,7 +5,7 @@ import './ItemList.css';
 const ItemList = ({ data }) => {
     return (
         <div  className="item-list">
-            {data?.map((item) => <ItemCard key={item.id} product={item}/>)}
+            {data?.map((product) => <ItemCard key={product.id} product={product}/>)}
         </div>
 
     )

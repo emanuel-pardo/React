@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ product }) => {
     if (!product) return;
@@ -13,6 +14,7 @@ const ItemDetail = ({ product }) => {
                 <p className="detail-text">{product?.description ?? ""}</p>
                 <p className="detail-numbers">Disponibilidad: {product?.stock ?? 0}</p>
                 <p className="detail-numbers">${product?.price ?? 0}</p>
+                <ItemCount stock={product?.stock}/>
             </div>
         </div>
     )

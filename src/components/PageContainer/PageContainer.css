@@ -10,7 +10,7 @@
 }
 
 .ilc-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: white;
     margin-bottom: 0.5rem;
@@ -27,7 +27,7 @@
 }
 
 .ilc-text {
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: bold;
     color: white;
     line-height: 1.6;
