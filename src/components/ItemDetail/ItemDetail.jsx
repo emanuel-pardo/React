@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
-    if (!product) return;
+    if (!product) return null;
+    const context = useContext(CartContext);
+
+    const addingQuantity = (quantity) => {
+        context.addItem(product, quantity);
+    }
+    
+    const quantityAvailable = context.getQuantityAvailableByItem(product);
 
     return (
         <div className='detail-container'>
@@ -14,7 +23,7 @@ const ItemDetail = ({ product }) => {
                 <p className="detail-text">{product?.description ?? ""}</p>
                 <p className="detail-numbers">Disponibilidad: {product?.stock ?? 0}</p>
                 <p className="detail-numbers">${product?.price ?? 0}</p>
-                <ItemCount stock={product?.stock}/>
+                <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />
             </div>
         </div>
     )

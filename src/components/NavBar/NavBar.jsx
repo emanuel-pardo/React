@@ -27,7 +27,7 @@ function NavBar() {
                     <Nav.Link as={NavLink} to="/contact">Contacto</Nav.Link>
                 </Nav>
                 <div className="cart-area">
-                    <CartWidget itemsCount={7} />
+                    <CartWidget/>
                 </div>
             </Navbar.Collapse>
         </Navbar>

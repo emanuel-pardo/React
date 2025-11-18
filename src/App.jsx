@@ -7,6 +7,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import Error from "./components/Error/Error";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartProvider } from "./context/CartContext";
 
 
 
@@ -25,15 +26,17 @@ la mejora continua, tanto en nuestros productos como en los procesos de fabricac
 
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<PageContainer title={title} text={text} imageSrc={imgsrc} />} />
-        <Route path="/products" element={<ItemListContainer />} />
-        <Route path="/products/category/:categoryId" element={<ItemListContainer />} />
-        <Route path="/products/:id" element={<ItemDetailContainer />} />
-        <Route path="/contact" element={<ContactForm />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<PageContainer title={title} text={text} imageSrc={imgsrc} />} />
+          <Route path="/products" element={<ItemListContainer />} />
+          <Route path="/products/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/products/:id" element={<ItemDetailContainer />} />
+          <Route path="/contact" element={<ContactForm />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   )
 }
