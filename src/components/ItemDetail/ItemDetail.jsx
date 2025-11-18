@@ -21,7 +21,7 @@ const ItemDetail = ({ product }) => {
                 <h1 className="detail-title">{product?.name?.toUpperCase() ?? ""}</h1>
                 <h2 className="detail-title">{product?.category?.toUpperCase() ?? ""} </h2>
                 <p className="detail-text">{product?.description ?? ""}</p>
-                <p className="detail-numbers">Disponibilidad: {product?.stock ?? 0}</p>
+                <p className="detail-numbers">Disponibilidad: {quantityAvailable ?? 0}</p>
                 <p className="detail-numbers">${product?.price ?? 0}</p>
                 <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />
             </div>
