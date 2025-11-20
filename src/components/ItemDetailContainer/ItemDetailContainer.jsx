@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Error from "../Error/Error";
+import Loader from "../Loader/Loader";
 
 
 const ItemDetailContainer = () => {
@@ -10,12 +11,15 @@ const ItemDetailContainer = () => {
     const [data, setData] = useState(null);
     const [error, setError] = useState("");
     const { id } = useParams();
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
-        setError("");    
+        setLoader(true);
+        setError("");
         getProductsById(id)
             .then((res) => setData(res))
-            .catch((error) =>  setError(error.message))
+            .catch((error) => setError(error.message))
+            .finally(() => setLoader(false));
     }, [id]);
 
     if (error)
@@ -24,7 +28,12 @@ const ItemDetailContainer = () => {
         )
 
     return (
-        <ItemDetail product={data} />
+        <>
+            {loader ?
+                <Loader /> :
+                <ItemDetail product={data} />
+            }
+        </>
     )
 }
 

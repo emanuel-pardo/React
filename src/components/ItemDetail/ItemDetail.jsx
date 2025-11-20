@@ -6,12 +6,14 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
     if (!product) return null;
+    const [purchase, setPurchase] = useState(false);
     const context = useContext(CartContext);
 
     const addingQuantity = (quantity) => {
         context.addItem(product, quantity);
+        setPurchase(true);
     }
-    
+
     const quantityAvailable = context.getQuantityAvailableByItem(product);
 
     return (
@@ -23,7 +25,7 @@ const ItemDetail = ({ product }) => {
                 <p className="detail-text">{product?.description ?? ""}</p>
                 <p className="detail-numbers">Disponibilidad: {quantityAvailable ?? 0}</p>
                 <p className="detail-numbers">${product?.price ?? 0}</p>
-                <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />
+                {purchase || quantityAvailable === 0? <button className="btn btn-dark">Terminar Compra</button> : <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />}
             </div>
         </div>
     )
