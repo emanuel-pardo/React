@@ -28,12 +28,9 @@ const ItemDetail = ({ product }) => {
                 <p className="detail-text">{product?.description ?? ""}</p>
                 <p className="detail-numbers">Disponibilidad: {quantityAvailable === 0 ? legendWithoutStock : quantityAvailable}</p>
                 <p className="detail-numbers">${product?.price ?? 0}</p>
-                {
-                    purchase || quantityAvailable === 0 ?
-                        <Link className="btn btn-dark" to="/cart">
-                            Terminar Compra
-                        </Link> :
-                        <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />
+                {purchase || quantityAvailable === 0 ?
+                    <Link className="btn btn-dark detail-button" to="/cart">Terminar Compra</Link>
+                    : <ItemCount quantityAvailable={quantityAvailable} addingQuantity={addingQuantity} />
                 }
             </div>
         </div>

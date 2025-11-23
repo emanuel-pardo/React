@@ -1,22 +1,28 @@
 import './CartView.css';
+import { MdRemoveShoppingCart } from "react-icons/md";
 import { useContext } from 'react';
-import { Link } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
 import CartViewDetail from '../CartViewDetail/CartViewDetail';
+import { Button } from 'react-bootstrap';
 
 const CartView = () => {
     const context = useContext(CartContext);
 
     return (
-        <div>
-            <span>Mi carrito</span>
-            <div className='cart-items'>
-                {context.cartValue?.map((itemCart) => <CartViewDetail key={itemCart.id} itemCart={itemCart} context={context} />)}
-                
+        <div className="cart-view-container">
+            <span className="cart-title">Detalle de mi carrito</span>
+            <div className="cart-items">
+                {context.cartValue?.map((itemCart) => (<CartViewDetail key={itemCart.id} itemCart={itemCart} context={context} />))}
             </div>
-            <Link className="btn btn-dark" to="/products">Visualizar Productos</Link>
+            <span className="cart-total">Total: ${context.getTotalCartValue()}</span>
+            <div className="cart-buttons">
+                <Button className="btn btn-danger" onClick={context.clearAll}>
+                    <MdRemoveShoppingCart className="icon" />
+                    Vaciar carrito
+                </Button>
+                <Button className="btn btn-success">Finalizar compra</Button>
+            </div>
         </div>
-
     );
 };
 

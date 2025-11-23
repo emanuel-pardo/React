@@ -59,3 +59,7 @@
     border-radius: 10px;
 }
 
+.detail-button {
+  align-self: center;
+  width: fit-content;
+}

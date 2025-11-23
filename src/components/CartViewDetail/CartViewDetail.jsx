@@ -1,4 +1,4 @@
-
+import { FaDeleteLeft } from "react-icons/fa6";
 import './CartViewDetail.css';
 
 const CartViewDetail = ({ itemCart, context }) => {
@@ -14,9 +14,8 @@ const CartViewDetail = ({ itemCart, context }) => {
                 <div className="cart-price-box">
                     <span>Cantidad: <b>{itemCart.quantity}</b></span>
                     <span>Precio unit.: <b>${itemCart.price}</b></span>
-                    <span className="cart-price-total">
-                        Total: <b>${itemCart.price * itemCart.quantity}</b>
-                    </span>
+                    <span className="cart-price-total">Total: <b>${itemCart.price * itemCart.quantity}</b></span>
+                    <FaDeleteLeft  className="delete-icon" onClick={()=> context.removeItem(itemCart)}/>
                 </div>
             </div>
         </div>
