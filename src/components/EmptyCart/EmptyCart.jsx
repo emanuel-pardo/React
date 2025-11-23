@@ -1,7 +1,6 @@
 import './EmptyCart.css';
 import PageContainer from "../PageContainer/PageContainer";
 import { Link } from "react-router-dom";
-import { Button } from 'react-bootstrap';
 
 const EmptyCart = () => {
     return (
@@ -12,7 +11,7 @@ const EmptyCart = () => {
                 imageSrc="https://i.postimg.cc/3wZkZ2Kv/empty-cart.jpg"
             />
             <div className="container-link">
-                <Button className="btn btn-dark" as={Link} to="/products">Visualizar Productos</Button>
+                <Link className="btn btn-dark" to="/products">Visualizar Productos</Link>
             </div>
         </>
     );
