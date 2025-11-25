@@ -1,4 +1,4 @@
-import { getProductsById } from "../../mock/ToApiAsync";
+import { getProductsById } from "../../service/productService";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";

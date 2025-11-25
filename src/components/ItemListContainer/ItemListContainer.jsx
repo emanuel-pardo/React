@@ -1,4 +1,4 @@
-import { getProducts, getProductsByCategoryId } from "../../mock/ToApiAsync";
+import { getProducts,getProductsByCategoryId } from "../../service/productService";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
@@ -11,7 +11,7 @@ const ItemListContainer = () => {
     const [data, setData] = useState([]);
     const { categoryId } = useParams();
 
-    useEffect(() => {
+ useEffect(() => {
         setError("");
         setLoader(true);
         if (categoryId) {
@@ -27,6 +27,23 @@ const ItemListContainer = () => {
                 .finally(() => setLoader(false))
         }
     }, [categoryId]);
+
+    // useEffect(() => {
+    //     setError("");
+    //     setLoader(true);
+    //     if (categoryId) {
+    //         getProductsByCategoryId(categoryId)
+    //             .then((res) => setData(res))
+    //             .catch((error) => setError(error.message))
+    //             .finally(() => setLoader(false))
+    //     }
+    //     else {
+    //         getProducts()
+    //             .then((res) => setData(res))
+    //             .catch((error) => setError(error.message))
+    //             .finally(() => setLoader(false))
+    //     }
+    // }, [categoryId]);
 
     if (error)
         return (
