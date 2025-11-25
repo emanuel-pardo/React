@@ -28,23 +28,7 @@ const ItemListContainer = () => {
         }
     }, [categoryId]);
 
-    // useEffect(() => {
-    //     setError("");
-    //     setLoader(true);
-    //     if (categoryId) {
-    //         getProductsByCategoryId(categoryId)
-    //             .then((res) => setData(res))
-    //             .catch((error) => setError(error.message))
-    //             .finally(() => setLoader(false))
-    //     }
-    //     else {
-    //         getProducts()
-    //             .then((res) => setData(res))
-    //             .catch((error) => setError(error.message))
-    //             .finally(() => setLoader(false))
-    //     }
-    // }, [categoryId]);
-
+    
     if (error)
         return (
             <Error errorMessage={error} />

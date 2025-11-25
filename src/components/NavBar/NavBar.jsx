@@ -18,11 +18,11 @@ function NavBar() {
                     <NavDropdown title="Productos" id="basic-nav-dropdown">
                         <NavDropdown.Item as={NavLink} to="/products" >Todos</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={NavLink} to="/products/category/1">Nylon</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/nylon">Nylon</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={NavLink} to="/products/category/2">Alta Tenacidad</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/poliester">Alta Tenacidad</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as={NavLink} to="/products/category/3">Fibra Cortada</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to="/products/category/fibracortada">Fibra Cortada</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link as={NavLink} to="/contact">Contacto</Nav.Link>
                 </Nav>

@@ -13,12 +13,18 @@ export const getProducts = async () => {
         }
     })
 
+    if (data.length === 0) {
+        throw new Error("Productos no encontrados");
+    }
+
     return data;
 };
 
 export const getProductsById = async (pId) => {
-    const productCollection = doc(dataBaseFS, DB_PRODUCTS_NAME, pId);
-    const response = await getDoc(productCollection);
+    const product = doc(dataBaseFS, DB_PRODUCTS_NAME, pId);
+    const response = await getDoc(product);
+    if (!response.exists())
+        throw new Error("Producto no encontrado");
     return {
         id: response.id,
         ...response.data()
@@ -26,7 +32,8 @@ export const getProductsById = async (pId) => {
 };
 
 export const getProductsByCategoryId = async (categoryId) => {
-    const productsCollectionByCategory = query(collection(dataBaseFS, DB_PRODUCTS_NAME), where("categoryId", "==", Number(categoryId)));
+    
+    const productsCollectionByCategory = query(collection(dataBaseFS, DB_PRODUCTS_NAME), where("categoryId", "==", categoryId));
     const response = await getDocs(productsCollectionByCategory);
     const data = response.docs.map((doc) => {
         return {
@@ -34,6 +41,9 @@ export const getProductsByCategoryId = async (categoryId) => {
             ...doc.data()
         }
     })
+
+    if (data.length === 0) 
+        throw new Error("Productos no encontrados en Categoria seleccionada");
 
     return data;
 };
