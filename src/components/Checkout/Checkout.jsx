@@ -39,10 +39,13 @@ function Checkout() {
         setLoader(true);
         let order = { buyer: infoBuyerData, invoiceDetail: context.cartValue, total: context.getTotalCartValue(), date: new Date().toISOString() };
         saveOrder(order)
-            .then((res) => setOrderId(res.id))
+            .then((res) => {
+                setOrderId(res.id);
+                context.clearAll();
+            })
             .catch((error) => setError(error.message))
             .finally(() => setLoader(false));
-        context.clearAll();
+
     };
 
     if (loader)
