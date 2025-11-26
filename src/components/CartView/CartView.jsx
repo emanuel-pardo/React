@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import CartViewDetail from '../CartViewDetail/CartViewDetail';
 import { Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const CartView = () => {
     const context = useContext(CartContext);
@@ -20,7 +21,7 @@ const CartView = () => {
                     <MdRemoveShoppingCart className="icon" />
                     Vaciar carrito
                 </Button>
-                <Button className="btn btn-success">Finalizar compra</Button>
+                <Link className="btn btn-success" to="/checkout">Finalizar compra</Link>
             </div>
         </div>
     );

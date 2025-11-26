@@ -5,10 +5,12 @@ import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import PageContainer from "./components/PageContainer/PageContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import Checkout from "./components/Checkout/Checkout"
 import ContactForm from "./components/ContactForm/ContactForm";
 import CartContainer from "./components/CartContainer/CartContainer";
 import Error from "./components/Error/Error";
 import { CartProvider } from "./context/CartContext";
+
 
 
 
@@ -38,6 +40,7 @@ la mejora continua, tanto en nuestros productos como en los procesos de fabricac
           <Route path="/products/:id" element={<ItemDetailContainer />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/cart" element={<CartContainer />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </CartProvider>
