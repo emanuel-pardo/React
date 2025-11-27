@@ -6,6 +6,7 @@ import EmptyCart from "../EmptyCart/EmptyCart";
 import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
 import { saveOrder } from "../../service/orderService";
+import FinishedProcessBuying from '../FinishedProcessBuying/FinishedProcessBuying';
 
 function Checkout() {
     const [error, setError] = useState("");
@@ -17,7 +18,8 @@ function Checkout() {
         nombre: "",
         email: "",
         identificacion: "",
-        celular: ""
+        celular: "",
+        direccion: ""
     });
 
     useEffect(() => {
@@ -38,8 +40,9 @@ function Checkout() {
         e.preventDefault();
         setLoader(true);
         let order = { buyer: infoBuyerData, invoiceDetail: context.cartValue, total: context.getTotalCartValue(), date: new Date().toISOString() };
-        saveOrder(order)
+        saveOrder({order})
             .then((res) => {
+                console.log(res);
                 setOrderId(res.id);
                 context.clearAll();
             })
@@ -58,14 +61,19 @@ function Checkout() {
             <Error errorMessage={error} />
         )
 
-    if (errorCart)
+    if (errorCart && !orderId)
         return (
             <EmptyCart />
         )
 
+    if (orderId)
+        return (
+            <FinishedProcessBuying orderId={orderId} />
+        )
+
     return (
-        <>
-            <h1>Ingrese sus datos para confirmar la orden</h1>
+        <div className="checkout-container">
+            <h1 className='checkout-title'>Ingrese sus datos para confirmar la orden</h1>
             < Form onSubmit={handleSubmit} className="p-4 bg-dark rounded shadow-sm checkout-form">
                 <Form.Group className="mb-3" controlId="formNombre">
                     <Form.Control
@@ -75,6 +83,7 @@ function Checkout() {
                         value={infoBuyerData.nombre}
                         onChange={handleChange}
                         required
+                        maxLength={30}
                     />
                 </Form.Group>
 
@@ -86,6 +95,19 @@ function Checkout() {
                         value={infoBuyerData.email}
                         onChange={handleChange}
                         required
+                        maxLength={50}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formDireccion">
+                    <Form.Control
+                        type="text"
+                        name="direccion"
+                        placeholder="Av Mitre 300"
+                        value={infoBuyerData.direccion}
+                        onChange={handleChange}
+                        required
+                        maxLength={30}
                     />
                 </Form.Group>
 
@@ -97,6 +119,7 @@ function Checkout() {
                         value={infoBuyerData.identificacion}
                         onChange={handleChange}
                         required
+                        maxLength={11}
                     />
                 </Form.Group>
 
@@ -104,10 +127,11 @@ function Checkout() {
                     <Form.Control
                         type="tel"
                         name="celular"
-                        placeholder="+5491112345678"
+                        placeholder="5491112345678"
                         value={infoBuyerData.celular}
                         onChange={handleChange}
                         required
+                        maxLength={15}
                     />
                 </Form.Group>
 
@@ -117,7 +141,7 @@ function Checkout() {
                     </Button>
                 </div>
             </Form >
-        </>
+        </div>
     );
 }
 

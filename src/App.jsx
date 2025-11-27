@@ -11,11 +11,6 @@ import CartContainer from "./components/CartContainer/CartContainer";
 import Error from "./components/Error/Error";
 import { CartProvider } from "./context/CartContext";
 
-
-
-
-
-
 function App() {
 
   const title = "trayectoria";
