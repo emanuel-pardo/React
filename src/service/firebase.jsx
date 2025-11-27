@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAk9ywQh_DUA694RX4Zt1uO6EMxnuwLhE0",
-  authDomain: "hilos-ecommerce.firebaseapp.com",
-  projectId: "hilos-ecommerce",
-  storageBucket: "hilos-ecommerce.firebasestorage.app",
-  messagingSenderId: "2325170610",
-  appId: "1:2325170610:web:0e15d62fa609b317233cab"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
