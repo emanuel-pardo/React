@@ -15,13 +15,13 @@ Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bo
 ---
 
 ## 📂 Estructura del proyecto
-src/
-├─ components/ --Componentes UI, cada componente organizado en carpeta con su .jsx y su .css
-├─ context/ --Context API: CartContext
-├─ hooks/ -- useConfirm: confirmar accion utilizando sweetalert2
-├─ service/ --Firebase: conexión, service de productos y service de órdenes
-├─ mock/ -- Datos de prueba en arrays
-└─ App.js -- Componente principal / ruteo
+- src/
+- ├─ components/ --Componentes UI, cada componente organizado en carpeta con su .jsx y su .css
+- ├─ context/ --Context API: CartContext
+- ├─ hooks/ -- useConfirm: confirmar accion utilizando sweetalert2
+- ├─ service/ --Firebase: conexión, service de productos y service de órdenes
+- ├─ mock/ -- Datos de prueba en arrays
+- └─ App.js -- Componente principal / ruteo
 
 ---
 
@@ -31,30 +31,30 @@ https://github.com/emanuel-pardo/React.git
 ---
 
 ## Instalar dependencias y Ejecutar proyecto
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 ---
 
 ## Requisitos
-Node: v19.8.1
-Npm: v9.5.1
+- Node: v19.8.1
+- Npm: v9.5.1
 
 ---
 
 ## Dependencias principales
 
-"bootstrap": "^5.3.8",
-"firebase": "^10.7.2",
-"react": "^18.2.0",
-"react-bootstrap": "^2.10.10",
-"react-dom": "^18.2.0",
-"react-icons": "^5.5.0",
-"react-router-dom": "^6.26.0",
-"sweetalert2": "^11.26.3"
+- "bootstrap": "^5.3.8",
+- "firebase": "^10.7.2",
+- "react": "^18.2.0",
+- "react-bootstrap": "^2.10.10",
+- "react-dom": "^18.2.0",
+- "react-icons": "^5.5.0",
+- "react-router-dom": "^6.26.0",
+- "sweetalert2": "^11.26.3"
 
 ---
 
 ## Autor
-Emanuel Pardo 
-https://ar.linkedin.com/in/emanuel-pardo-12a9b5218
+- Emanuel Pardo 
+- https://ar.linkedin.com/in/emanuel-pardo-12a9b5218
