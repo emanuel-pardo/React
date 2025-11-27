@@ -10,7 +10,7 @@ Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bo
 - **Ruteo:** React Router
 - **Backend/DB:** Firebase Firestore
 - **Gestión de estado:** Context API (Carrito)
-- **Otras librerías:** none (opcional: sweetalert, etc.)
+- **Otras librerías:**  sweetalert2
 
 ---
 
@@ -18,6 +18,7 @@ Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bo
 src/
 ├─ components/ --Componentes UI, cada componente organizado en carpeta con su .jsx y su .css
 ├─ context/ --Context API: CartContext
+├─ hooks/ -- useConfirm: confirmar accion utilizando sweetalert2
 ├─ service/ --Firebase: conexión, service de productos y service de órdenes
 ├─ mock/ -- Datos de prueba en arrays
 └─ App.js -- Componente principal / ruteo
@@ -29,12 +30,8 @@ https://github.com/emanuel-pardo/React.git
 
 ---
 
-## Instalar dependencias
+## Instalar dependencias y Ejecutar proyecto
 npm install
-
----
-
-## Ejecutar proyecto
 npm run dev
 
 ---
@@ -53,7 +50,8 @@ Npm: v9.5.1
 "react-bootstrap": "^2.10.10",
 "react-dom": "^18.2.0",
 "react-icons": "^5.5.0",
-"react-router-dom": "^6.26.0"
+"react-router-dom": "^6.26.0",
+"sweetalert2": "^11.26.3"
 
 ---
 
