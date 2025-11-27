@@ -13,7 +13,7 @@ Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bo
 - **Ruteo:** React Router
 - **Backend/DB:** Firebase Firestore
 - **Gestión de estado:** Context API (Carrito)
-- **Otras librerías:**  sweetalert2
+- **Otras librerías:**  sweetalert2, postimages.org/es/ (subida de imagenes)
 
 ---
 
