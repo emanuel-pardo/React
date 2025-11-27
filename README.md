@@ -1,8 +1,62 @@
-# React + Vite
+# E-Commerce React-Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bootstrap**, **Firebase** (Firestore) y **React Router**. Permite a los usuarios navegar, agregar productos al carrito, completar un checkout y generar órdenes de compra.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔹 Tecnologías
+
+- **Frontend:** React, React Bootstrap, CSS
+- **Ruteo:** React Router
+- **Backend/DB:** Firebase Firestore
+- **Gestión de estado:** Context API (Carrito)
+- **Otras librerías:** none (opcional: sweetalert, etc.)
+
+---
+
+## 📂 Estructura del proyecto
+src/
+├─ components/ --Componentes UI, cada componente organizado en carpeta con su .jsx y su .css
+├─ context/ --Context API: CartContext
+├─ service/ --Firebase: conexión, service de productos y service de órdenes
+├─ mock/ -- Datos de prueba en arrays
+└─ App.js -- Componente principal / ruteo
+
+---
+
+## Clonar Repositorio
+https://github.com/emanuel-pardo/React.git
+
+---
+
+## Instalar dependencias
+npm install
+
+---
+
+## Ejecutar proyecto
+npm run dev
+
+---
+
+## Requisitos
+Node: v19.8.1
+Npm: v9.5.1
+
+---
+
+## Dependencias principales
+
+"bootstrap": "^5.3.8",
+"firebase": "^10.7.2",
+"react": "^18.2.0",
+"react-bootstrap": "^2.10.10",
+"react-dom": "^18.2.0",
+"react-icons": "^5.5.0",
+"react-router-dom": "^6.26.0"
+
+---
+
+## Autor
+Emanuel Pardo 
+https://ar.linkedin.com/in/emanuel-pardo-12a9b5218
