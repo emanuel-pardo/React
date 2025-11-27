@@ -2,6 +2,9 @@
 
 Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bootstrap**, **Firebase** (Firestore) y **React Router**. Permite a los usuarios navegar, agregar productos al carrito, completar un checkout y generar órdenes de compra.
 
+![Listado de productos](https://i.postimg.cc/m240150K/e_commerce1.png)
+![Agregando a carrito](https://i.postimg.cc/MKwhfFh3/e_commerce2.png)
+![Checkout](https://i.postimg.cc/sDztGNtN/e_commerce3.png)
 ---
 
 ## 🔹 Tecnologías
