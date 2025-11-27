@@ -8,6 +8,12 @@ Esta es una aplicación de **e-commerce** desarrollada con **React**, **React Bo
 
 ---
 
+## 🌐 Deploy
+Pueden probar la aplicación directamente en el siguiente link:
+[Ver aplicación en Vercel](https://react-pi-bay.vercel.app/)
+
+---
+
 ## 🔹 Tecnologías
 
 - **Frontend:** React, React Bootstrap, CSS
