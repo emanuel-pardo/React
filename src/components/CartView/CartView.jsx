@@ -5,9 +5,18 @@ import { CartContext } from '../../context/CartContext';
 import CartViewDetail from '../CartViewDetail/CartViewDetail';
 import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { useConfirm } from '../../hooks/useConfirm';
 
 const CartView = () => {
     const context = useContext(CartContext);
+    const confirm = useConfirm();
+
+
+    const handleClearCart = async () => {
+        const result = await confirm({ title: 'Vaciar carrito', text: 'Desea continuar?' });
+        if (result)
+            context.clearAll();
+    };
 
     return (
         <div className="cart-view-container">
@@ -17,7 +26,7 @@ const CartView = () => {
             </div>
             <span className="cart-total">Total: ${context.getTotalCartValue()}</span>
             <div className="cart-buttons">
-                <Button className="btn btn-danger" onClick={context.clearAll}>
+                <Button className="btn btn-danger" onClick={handleClearCart}>
                     <MdRemoveShoppingCart className="icon" />
                     Vaciar carrito
                 </Button>
